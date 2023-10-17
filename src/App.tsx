@@ -1,26 +1,12 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { GluestackUIProvider, Text, Box } from "@gluestack-ui/themed";
+import { config } from "@gluestack-ui/config";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GluestackUIProvider config={config}>
+      <Box width="100%" justifyContent="center" alignItems="center">
+        <Text>Open up App.js to start working on your app!</Text>
+      </Box>
+    </GluestackUIProvider>
   );
 }
-
-export default App;
