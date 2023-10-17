@@ -6,6 +6,11 @@ export default function App() {
     <GluestackUIProvider config={config}>
       <Box width="100%" justifyContent="center" alignItems="center">
         <Text>Open up App.js to start working on your app!</Text>
+        {/* CreatePassword  */}
+        {/* forget passowrd */}
+        {/* login */}
+        {/* sign-up */}
+        {/* verify-otp */}
       </Box>
     </GluestackUIProvider>
   );

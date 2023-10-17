@@ -1,15 +1,54 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import reportWebVitals from "./reportWebVitals";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import SplashScreen from "./routes/root";
+import SignIn from "./routes/SignIn";
+import SignUp from "./routes/SignUp";
+import ForgotPassword from "./routes/ForgotPassword";
+import OtpVerification from "./routes/OtpVerification";
+import CreatePassword from "./routes/CreatePassword";
+import { GluestackUIProvider } from "@gluestack-ui/themed";
+// import { config } from "@gluestack-ui/config";
+import { config } from "./gluestack-ui.config";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <SplashScreen />,
+  },
+  {
+    path: "/login",
+    element: <SignIn />,
+  },
+  {
+    path: "/signup",
+    element: <SignUp />,
+  },
+  {
+    path: "/forgot-password",
+    element: <ForgotPassword />,
+  },
+  {
+    path: "/verify-otp",
+    element: <OtpVerification />,
+  },
+  {
+    path: "/create-password",
+    element: <CreatePassword />,
+  },
+]);
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
+
 root.render(
   <React.StrictMode>
-    <App />
+    <GluestackUIProvider config={config}>
+      <RouterProvider router={router} />
+    </GluestackUIProvider>
   </React.StrictMode>
 );
 
