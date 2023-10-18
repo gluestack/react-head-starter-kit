@@ -10,7 +10,7 @@ import {
   Center,
   FormControl,
   Input,
-  Link,
+  // Link,
   LinkText,
   FormControlHelperText,
   InputField,
@@ -23,6 +23,7 @@ import {
   Heading,
 } from "@gluestack-ui/themed";
 
+import CustomReactLink from "../custom/CustomReactLink";
 import LogoWebLight from "../assets/images/gluestackUiProLogo_web_light.svg";
 
 import { useForm } from "react-hook-form";
@@ -105,13 +106,17 @@ function PinInput({
 function Header() {
   return (
     <HStack space="xs" px="$3" my="$4.5" alignItems="center">
-      <Link>
+      <CustomReactLink
+        style={{
+          textDecoration: "none",
+        }}
+      >
         <Icon
           as={ArrowLeftIcon}
           color="$textLight50"
           sx={{ _dark: { color: "$textDark50" } }}
         />
-      </Link>
+      </CustomReactLink>
       <Text
         color="$textLight50"
         fontSize="$lg"
@@ -210,9 +215,14 @@ function AccountLink() {
       >
         Already have an account?
       </Text>
-      <Link href="/login">
+      <CustomReactLink
+        to="/login"
+        style={{
+          textDecoration: "none",
+        }}
+      >
         <LinkText fontSize="$sm">Sign In</LinkText>
-      </Link>
+      </CustomReactLink>
     </HStack>
   );
 }
@@ -230,9 +240,14 @@ function ResendLink() {
       >
         Didn't receive the OTP?{" "}
       </Text>
-      <Link href="">
+      <CustomReactLink
+        to=""
+        style={{
+          textDecoration: "none",
+        }}
+      >
         <LinkText fontSize="$sm">RESEND OTP</LinkText>
-      </Link>
+      </CustomReactLink>
     </HStack>
   );
 }

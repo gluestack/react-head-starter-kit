@@ -25,11 +25,12 @@ import {
   FormControlErrorIcon,
   FormControlErrorText,
   InputIcon,
-  Link,
+  // Link,
   ScrollView,
   InputSlot,
 } from "@gluestack-ui/themed";
 
+import CustomReactLink from "../custom/CustomReactLink";
 import LogoLight from "../assets/images/gluestackUiProLogo_web_light.svg";
 
 import { useForm, Controller } from "react-hook-form";
@@ -134,14 +135,18 @@ export default function CreatePassword() {
   function Header() {
     return (
       <HStack space="md" px="$3" my="$4.5" alignItems="center">
-        <Link>
+        <CustomReactLink
+          style={{
+            textDecoration: "none",
+          }}
+        >
           <Icon
             size="md"
             as={ArrowLeftIcon}
             color="$textLight50"
             sx={{ _dark: { color: "$textDark50" } }}
           />
-        </Link>
+        </CustomReactLink>
         <Text
           color="$textLight50"
           fontSize="$lg"

@@ -3,14 +3,13 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import SplashScreen from "./routes/root";
+import SplashScreen from "./routes/SplashScreen";
 import SignIn from "./routes/SignIn";
 import SignUp from "./routes/SignUp";
 import ForgotPassword from "./routes/ForgotPassword";
 import OtpVerification from "./routes/OtpVerification";
 import CreatePassword from "./routes/CreatePassword";
 import { GluestackUIProvider } from "@gluestack-ui/themed";
-// import { config } from "@gluestack-ui/config";
 import { config } from "./gluestack-ui.config";
 
 const router = createBrowserRouter([

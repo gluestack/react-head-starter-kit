@@ -7,7 +7,6 @@ import {
   Input,
   Text,
   VStack,
-  Link,
   useToast,
   Toast,
   Box,
@@ -32,8 +31,10 @@ import {
   Heading,
   LinkText,
   InputSlot,
+  Link,
 } from "@gluestack-ui/themed";
 
+import CustomReactLink from "../custom/CustomReactLink";
 import LogoWebLight from "../assets/images/gluestackUiProLogo_web_light.svg";
 
 import { useForm, Controller } from "react-hook-form";
@@ -194,9 +195,15 @@ const SignInForm = () => {
           <FormControlHelper></FormControlHelper>
         </FormControl>
       </VStack>
-      <Link href="/forgot-password" ml="auto">
+      <CustomReactLink
+        to="/forgot-password"
+        marginLeft="auto"
+        style={{
+          textDecoration: "none",
+        }}
+      >
         <LinkText fontSize="$xs">Forgot password?</LinkText>
-      </Link>
+      </CustomReactLink>
       <Controller
         name="rememberme"
         defaultValue={false}
@@ -253,13 +260,17 @@ function MobileHeader() {
   return (
     <VStack px="$3" mt="$4.5" space="md">
       <HStack space="md" alignItems="center">
-        <Link>
+        <CustomReactLink
+          style={{
+            textDecoration: "none",
+          }}
+        >
           <Icon
             as={ArrowLeftIcon}
             color="$textLight50"
             sx={{ _dark: { color: "$textDark50" } }}
           />
-        </Link>
+        </CustomReactLink>
         <Text
           color="$textLight50"
           sx={{ _dark: { color: "$textDark50" } }}
@@ -353,12 +364,12 @@ const Main = () => {
           alignItems="center"
           space="lg"
         >
-          <Link href="">
+          <Link href="#">
             <Button action="secondary" variant="link" onPress={() => {}}>
               <ButtonIcon as={FacebookIcon} size="md" />
             </Button>
           </Link>
-          <Link href="">
+          <Link href="#">
             <Button action="secondary" variant="link" onPress={() => {}}>
               <ButtonIcon as={GoogleIcon} size="md" />
             </Button>
@@ -377,9 +388,14 @@ const Main = () => {
           >
             Don't have an account?
           </Text>
-          <Link href="/signup">
+          <CustomReactLink
+            to="/signup"
+            style={{
+              textDecoration: "none",
+            }}
+          >
             <LinkText fontSize="$sm">Sign up</LinkText>
-          </Link>
+          </CustomReactLink>
         </HStack>
       </Box>
     </>

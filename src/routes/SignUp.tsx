@@ -6,7 +6,6 @@ import {
   HStack,
   VStack,
   Text,
-  Link,
   Divider,
   Icon,
   Center,
@@ -32,9 +31,11 @@ import {
   ArrowLeftIcon,
   InputField,
   InputSlot,
+  Link,
 } from "@gluestack-ui/themed";
 
 import LogoWebLight from "../assets/images/gluestackUiProLogo_web_light.svg";
+import CustomReactLink from "../custom/CustomReactLink";
 
 import { Controller, useForm } from "react-hook-form";
 
@@ -98,13 +99,17 @@ function MobileHeader() {
   return (
     <VStack px="$3" mt="$4.5" mb="$5" space="md">
       <HStack space="md" alignItems="center">
-        <Link>
+        <CustomReactLink
+          style={{
+            textDecoration: "none",
+          }}
+        >
           <Icon
             as={ArrowLeftIcon}
             color="$textLight50"
             sx={{ _dark: { color: "$textDark50" } }}
           />
-        </Link>
+        </CustomReactLink>
         <Text
           color="$textLight50"
           sx={{ _dark: { color: "$textDark50" } }}
@@ -342,7 +347,11 @@ const SignUpForm = () => {
               }}
             >
               I accept the{" "}
-              <Link>
+              <CustomReactLink
+                style={{
+                  textDecoration: "none",
+                }}
+              >
                 <LinkText
                   sx={{
                     _ios: {
@@ -355,9 +364,13 @@ const SignUpForm = () => {
                 >
                   Terms of Use
                 </LinkText>
-              </Link>{" "}
+              </CustomReactLink>{" "}
               &{" "}
-              <Link>
+              <CustomReactLink
+                style={{
+                  textDecoration: "none",
+                }}
+              >
                 <LinkText
                   sx={{
                     _ios: {
@@ -370,7 +383,7 @@ const SignUpForm = () => {
                 >
                   Privacy Policy
                 </LinkText>
-              </Link>
+              </CustomReactLink>
             </CheckboxLabel>
           </Checkbox>
         )}
@@ -454,12 +467,12 @@ function SignUpFormComponent() {
           justifyContent="center"
           space="lg"
         >
-          <Link href="">
+          <Link href="#">
             <Button action="secondary" variant="link" onPress={() => {}}>
               <ButtonIcon as={FacebookIcon} size="md" />
             </Button>
           </Link>
-          <Link href="">
+          <Link href="#">
             <Button action="secondary" variant="link" onPress={() => {}}>
               <ButtonIcon as={GoogleIcon} size="md" />
             </Button>
@@ -482,9 +495,14 @@ function SignUpFormComponent() {
           >
             Already have an account?
           </Text>
-          <Link href="/login">
+          <CustomReactLink
+            to="/login"
+            style={{
+              textDecoration: "none",
+            }}
+          >
             <LinkText fontSize="$sm">Sign In</LinkText>
-          </Link>
+          </CustomReactLink>
         </HStack>
       </Box>
     </>

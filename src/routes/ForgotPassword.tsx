@@ -6,7 +6,7 @@ import {
   Input,
   Text,
   VStack,
-  Link,
+  // Link,
   useToast,
   Toast,
   Box,
@@ -23,6 +23,7 @@ import {
   Center,
 } from "@gluestack-ui/themed";
 
+import CustomReactLink from "../custom/CustomReactLink";
 import ImageWebDark from "../assets/images/forgotPassword_web_dark.png";
 import ImageMobileLight from "../assets/images/forgotPassword_mobile_light.png";
 import ImageMobileDark from "../assets/images/forgotPassword_mobile_dark.png";
@@ -47,14 +48,18 @@ type forgotPasswordSchemaType = z.infer<typeof forgotPasswordSchema>;
 function Header() {
   return (
     <HStack space="md" px="$3" py="$4.5" alignItems="center">
-      <Link>
+      <CustomReactLink
+        style={{
+          textDecoration: "none",
+        }}
+      >
         <Icon
           size="md"
           as={ArrowLeftIcon}
           color="$textLight50"
           sx={{ _dark: { color: "$textDark50" } }}
         />
-      </Link>
+      </CustomReactLink>
       <Text
         color="$textLight50"
         fontSize="$lg"

@@ -6,9 +6,9 @@ import {
   Image,
   Center,
   ButtonText,
-  Link,
 } from "@gluestack-ui/themed";
 
+import CustomReactLink from "../custom/CustomReactLink";
 import LogoWebLight from "../assets/images/gluestackUiProLogo_web_light.svg";
 import LogoMobile from "../assets/images/gluestackUiProLogo_mobile.png";
 
@@ -39,7 +39,12 @@ function ActionButtons() {
         isFocusVisible={false}
         backgroundColor="$backgroundLight0"
       >
-        <Link href="/login">
+        <CustomReactLink
+          to="/login"
+          style={{
+            textDecoration: "none",
+          }}
+        >
           <ButtonText
             fontWeight="$bold"
             textDecorationLine="none"
@@ -47,7 +52,7 @@ function ActionButtons() {
           >
             LOGIN
           </ButtonText>
-        </Link>
+        </CustomReactLink>
       </Button>
 
       <Button
@@ -67,11 +72,16 @@ function ActionButtons() {
         isDisabled={false}
         isFocusVisible={false}
       >
-        <Link href="/signup">
+        <CustomReactLink
+          to="/signup"
+          style={{
+            textDecoration: "none",
+          }}
+        >
           <ButtonText textDecorationLine="none" color="$textLight50">
             SIGN UP
           </ButtonText>
-        </Link>
+        </CustomReactLink>
       </Button>
     </VStack>
   );
